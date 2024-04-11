@@ -16,7 +16,7 @@ const BookDetail = ({ book, onAddToCart }) => {
         onAddToCart(book,quantity);
       };  
   return (
-    <Card style={{ display: 'flex', margin: '25px' }}>
+    <Card style={{ display: 'flex', margin: '25px', minWidth: '800px', borderRadius: '20px' }}>
       <CardMedia
         component="img"
         style={{ width: '200px', height: '300px' }}
@@ -24,29 +24,30 @@ const BookDetail = ({ book, onAddToCart }) => {
         title={book.title}
       />
       <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '16px' }}>
-        <CardContent>
+        <CardContent style={{height:'300px'}}>
           <Typography variant="h5">{book.title}</Typography>
           <Typography variant="subtitle1">{book.author}</Typography>
           <Typography variant="body2" color="textSecondary">{book.description}</Typography>
-          <Grid container spacing={2} alignItems="center">
-            <Grid item xs={6}>
-              <FormControl style={{ marginTop: '16px', minWidth: '120px' }}>
+          <Grid container spacing={2} alignItems="center" style={{marginTop:'95px', display:'block'}}>
+    
+            
+            <FormControl style={{ minWidth: '120px', float:'right'}}>
                 <InputLabel id="quantity-label">Quantity</InputLabel>
                 <Select
                   labelId="quantity-label"
                   id="quantity-select"
                   value={quantity}
                   onChange={handleQuantityChange}
+                  style={{borderRadius:'25px'}}
+                  label={'Quantity'}
                 >
                   {[...Array(10).keys()].map((value) => (
                     <MenuItem key={value + 1} value={value + 1}>{value + 1}</MenuItem>
                   ))}
                 </Select>
               </FormControl>
-            </Grid>
-            <Grid item xs={6}>
-              <Button variant="contained" color="primary" onClick={handleAddToCartClick}>Add to Cart</Button>
-            </Grid>
+              <Button style={{borderRadius:'25px', padding:'15px 15px', float:'right', margin:'0 10px'}} variant="contained" color="primary" onClick={handleAddToCartClick}>Add to Cart</Button>
+
           </Grid>
         </CardContent>
       </div>

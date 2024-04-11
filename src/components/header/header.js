@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
+import './header.module.css';
 
 //import ToggleColorMode from './ToggleColorMode';
 
@@ -94,7 +95,6 @@ function Header({ isLoggedIn }) {
                 flexGrow: 1,
                 display: 'flex',
                 alignItems: 'center',
-                ml: '-18px',
                 px: 0,
               }}
             >
@@ -107,7 +107,7 @@ function Header({ isLoggedIn }) {
                 alt="logo of UTA bookstore"
               />
               </Link>
-              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+              <Box sx={{ display: { xs: 'none', md: 'flex', marginLeft: '10px' } }}>
                 <MenuItem
                   onClick={() => scrollToSection('features')}
                   sx={{ py: '6px', px: '12px' }}
@@ -168,6 +168,7 @@ function Header({ isLoggedIn }) {
                 size="small"
                 component="a"
                 href="/login"
+                style={{borderRadius:'25px', fontSize:'medium !important'}}
               >
                 Sign in
               </Button>
@@ -177,6 +178,7 @@ function Header({ isLoggedIn }) {
                 size="small"
                 component="a"
                 href="/signup"
+                style={{borderRadius:'25px', fontSize:'medium !important'}}
               >
                 Sign up
               </Button>

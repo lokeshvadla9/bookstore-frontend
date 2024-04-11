@@ -32,7 +32,7 @@ function Orders() {
   return (
     <React.Fragment>
       <Typography component="h2" variant="h6" color="primary" gutterBottom>Orders</Typography>
-      <Table size="small">
+      <Table size="small" style={{borderRadius:'25px'}}>
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
@@ -43,7 +43,7 @@ function Orders() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {orders.map((row) => (
+          {orders.length > 0 && orders.map((row) => (
             <TableRow key={row['Order Id']}>
               <TableCell>{row['Order Date']}</TableCell>
               <TableCell>{row['Customer Name']}</TableCell>

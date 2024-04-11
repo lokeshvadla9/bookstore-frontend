@@ -1,14 +1,19 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker} from '@react-google-maps/api';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { Container } from '@mui/material';
 
 const LocateStore = () => {
   const API_KEY = "AIzaSyDcafy9k0FgeeOsLyAd3x4_DaKfajExTmk";
   const storeLocation = { lat: 32.733441150184845, lng: -97.10955426227687 };
 
   return (
+    <Container
+    component="main"
+    sx={{ display: 'flex', flexDirection: 'column', minHeight: '75vh', marginTop:'10%' }}
+  >
     <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: 20, mb: 8 }}  > 
       <Box width="100%">
         <Typography variant="h2" gutterBottom>
@@ -44,6 +49,7 @@ const LocateStore = () => {
         </Grid>
       </Box>
     </Box>
+    </Container>
 
   );
 };

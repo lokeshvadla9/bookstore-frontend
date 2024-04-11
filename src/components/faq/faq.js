@@ -6,10 +6,14 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from '@mui/material/Box';
 import faqData from './faqData.json';
-
+import { Container } from '@mui/material';
 
 const FAQ = () => {
   return (
+    <Container
+    component="main"
+    sx={{ display: 'flex', flexDirection: 'column', minHeight: '75vh', marginTop:'10%' }}
+  >
     <Box marginTop={20}>
       <Typography variant="h5" gutterBottom>
         Frequently Asked Questions
@@ -33,6 +37,7 @@ const FAQ = () => {
         </Accordion>
       ))}
     </Box>
+    </Container>
   );
 };
 

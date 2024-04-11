@@ -126,26 +126,27 @@ const Inventory = ({ onAddBookClick }) => {
 
   return (
     <Box sx={{ padding: '20px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)', borderRadius: '5px', marginTop:'3%' }}>
-        <Button variant="contained" onClick={handleAddBookClick} style={{ float: 'right' }}>Add Book</Button>
+      <Typography variant="h4" gutterBottom>Inventory</Typography>
+        <Button variant="contained" onClick={handleAddBookClick} style={{ float: 'right', borderRadius:'25px', padding:'10px 20px'}}>Add Book</Button>
     <Grid container spacing={2}>
       {books && books.map((book) => (
         <Grid item key={book.book_id}>
-          <Card style={{ maxWidth: 300, margin: 10 }}>
-            <CardContent style={{ height: 475, overflow: 'hidden' }}>
+          <Card style={{ maxWidth: 305, margin: 10, borderRadius:'25px'}}>
+            <CardContent style={{ height: 505, overflow: 'hidden' }}>
               <Typography variant="h6" gutterBottom>
                 {book.title}
               </Typography>
-              <Typography variant="body1" color="textSecondary">
+              <img src={book.image_url} alt={book.title} style={{ width: '50%', height: '50%', marginTop: 10, borderRadius:'5%' }} />
+              <Typography variant="body1" color="textSecondary" style={{marginTop:'5px'}} >
                 Author: {book.author}
               </Typography>
-              <Typography variant="body1" color="textSecondary">
+              <Typography variant="body1" color="textSecondary" >
                 ISBN: {book.ISBN}
               </Typography>
-              <Typography variant="body1" color="textSecondary">
+              <Typography variant="body1" color="textSecondary" style={{marginBottom:'5px'}}>
                 Price: ${book.price}
               </Typography>
-              <img src={book.image_url} alt={book.title} style={{ width: '50%', height: '50%', marginTop: 10 }} />
-              <Typography variant="body2" component="p">
+              <Typography  style={{marginTop:'5px'}}variant="body2" component="p">
                 {book.description.substring(0, 100)}
                 {book.description.length > 100 && '...'}
               </Typography>
@@ -154,12 +155,14 @@ const Inventory = ({ onAddBookClick }) => {
                   See more
                 </Typography>
               </Tooltip>
-              <IconButton aria-label="edit" onClick={() => handleEditBook(book)}>
-                <EditIcon />
+              <div style={{marginBottom:'20px'}}>
+              <IconButton style={{width: '50%', color:'black', fontSize:'large'}} aria-label="edit" onClick={() => handleEditBook(book)}>
+                <EditIcon />Edit
               </IconButton>
-              <IconButton aria-label="delete" onClick={() => handleDeleteBook(book)}>
-                <DeleteIcon />
+              <IconButton style={{width: '50%', color:'red', fontSize:'large'}} aria-label="delete" onClick={() => handleDeleteBook(book)}>
+                <DeleteIcon /> Delete
               </IconButton>
+              </div>
             </CardContent>
           </Card>
         </Grid>

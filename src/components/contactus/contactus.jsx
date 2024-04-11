@@ -131,7 +131,7 @@ const ContactUs = () => {
               />
             </Box>
             <Box sx={{ textAlign: 'right' }}>
-              <Button type="submit" variant="contained" color="primary">Submit</Button>
+              <Button type="submit" style={{borderRadius:'25px',padding:'10px 30px'}} variant="contained" color="primary">Submit</Button>
             </Box>
           </form>
         </Grid>

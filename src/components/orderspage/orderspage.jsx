@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Select, MenuItem, FormControl, InputLabel, Button, Box } from '@mui/material';
+import { Table, TableBody, TableCell, Typography, TableContainer, TableHead, TableRow, Paper, Select, MenuItem, FormControl, InputLabel, Button, Box } from '@mui/material';
 import config from '../../config';
 
 const OrdersPage = () => {
@@ -57,7 +57,8 @@ const OrdersPage = () => {
 
   return (
     <Box sx={{ padding: '20px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)', borderRadius: '5px', marginTop:'7%' }}>
-      <TableContainer component={Paper}>
+      <Typography variant="h4" gutterBottom>Orders</Typography>
+      <TableContainer component={Paper} style={{borderRadius:'25px'}}>
         <Table sx={{ minWidth: 650 }} aria-label="Orders table">
           <TableHead>
             <TableRow>
@@ -97,7 +98,9 @@ const OrdersPage = () => {
                   <FormControl>
                     <InputLabel>Status</InputLabel>
                     <Select
+                    label={'status'}
                       value={order['Order Status']}
+                      style={{borderRadius:'25px'}}
                       onChange={(e) => handleStatusChange(order, e.target.value)}
                     >
                       <MenuItem value="Pending">Pending</MenuItem>

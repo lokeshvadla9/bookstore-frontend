@@ -240,6 +240,7 @@ function SignUp() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              style={{borderRadius:'25px', fontSize:'unset'}}
             >
               Sign Up
             </Button>

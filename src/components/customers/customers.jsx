@@ -97,7 +97,8 @@ const Customers = () => {
 
   return (
     <Box sx={{ padding: '20px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)', borderRadius: '5px', marginTop:'3%' }}>
-  <TableContainer component={Paper}>
+      <Typography variant="h4" gutterBottom>Customers</Typography>
+  <TableContainer component={Paper} style={{borderRadius:'25px'}}>
     <Table aria-label="users table">
       <TableHead>
         <TableRow>
@@ -120,19 +121,19 @@ const Customers = () => {
             <TableCell>
               {editingUser === user ? (
                 <>
-                  <IconButton aria-label="update" onClick={() => handleUpdateUser()}>
+                  <IconButton aria-label="update" style={{color:'black'}} onClick={() => handleUpdateUser()}>
                     <CheckIcon />
                   </IconButton>
-                  <IconButton aria-label="cancel" onClick={() => setEditingUser(null)}>
+                  <IconButton aria-label="cancel" style={{color:'red'}} onClick={() => setEditingUser(null)}>
                     <CancelIcon />
                   </IconButton>
                 </>
               ) : (
                 <>
-                  <IconButton aria-label="edit" onClick={() => handleEditUser(user)}>
+                  <IconButton aria-label="edit" style={{color:'black'}} onClick={() => handleEditUser(user)}>
                     <EditIcon />
                   </IconButton>
-                  <IconButton aria-label="delete" onClick={() => handleDeleteUser(user)}>
+                  <IconButton aria-label="delete" style={{color:'red'}} onClick={() => handleDeleteUser(user)}>
                     <DeleteIcon />
                   </IconButton>
                 </>

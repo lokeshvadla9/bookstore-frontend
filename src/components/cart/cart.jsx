@@ -20,7 +20,7 @@ function Cart({ cart,userData,setCart}) {
   };
 
   return (
-    <Box>
+<Box sx={{ padding: '20px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)', borderRadius: '5px', marginTop:'3%' }}>
       <Typography variant="h4" gutterBottom>Cart</Typography>
       {cart.length === 0 ? (
         <Box sx={{ textAlign: 'center', py: 4 }}>
@@ -58,7 +58,7 @@ function Cart({ cart,userData,setCart}) {
           </Box>
           <Box mt={2}>
             <Grid container justifyContent="flex-end">
-                <Button variant="contained" color="primary"  sx={{ marginRight: 2 }} onClick={()=>handleProceedToCheckout(cart,totalPrice)}>
+                <Button variant="contained" color="primary"  sx={{ marginRight: 2 }} style={{borderRadius:'25px', padding:'10px 20px'}} onClick={()=>handleProceedToCheckout(cart,totalPrice)}>
                   Proceed to Checkout
                 </Button>
             </Grid>

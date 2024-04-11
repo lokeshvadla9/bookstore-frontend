@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, FormControl, Select, MenuItem } from '@mui/material';
+import { Box, Typography, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, FormControl, Select, MenuItem } from '@mui/material';
 import config from '../../config';
 
 const Queries = () => {
@@ -65,13 +65,14 @@ const handleFilterChange = (event) => {
   const filteredQueries = filterStatus === 'All' ? queries : queries.filter(query => query.status === filterStatus);
 
   return (
-    <div>
+    <Box sx={{ padding: '20px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)', borderRadius: '5px', marginTop:'3%' }}>
       <Typography variant="h4" gutterBottom>Queries</Typography>
       <FormControl sx={{ minWidth: 120, marginBottom: 2 }}>
         <Select
           value={filterStatus}
           onChange={handleFilterChange}
           displayEmpty
+          style={{borderRadius:'25px'}}
         >
           <MenuItem value="All">All</MenuItem>
           <MenuItem value="open">Open</MenuItem>
@@ -79,7 +80,7 @@ const handleFilterChange = (event) => {
           <MenuItem value="closed">Closed</MenuItem>
         </Select>
       </FormControl>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} style={{borderRadius:'25px'}}>
         <Table>
           <TableHead>
             <TableRow>
@@ -101,6 +102,7 @@ const handleFilterChange = (event) => {
                   <FormControl sx={{ minWidth: 120 }}>
                     <Select
                       value={query.status}
+                      style={{borderRadius:'25px'}}
                       onChange={(event) => handleStatusChange(query.id, event.target.value)}
                     >
                       <MenuItem value="open">Open</MenuItem>
@@ -114,7 +116,7 @@ const handleFilterChange = (event) => {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+    </Box>
   );
 };
 

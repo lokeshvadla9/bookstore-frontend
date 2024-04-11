@@ -77,10 +77,10 @@ function Home() {
       </Carousel>
 
       <Container>
-        <Typography variant="h2" align="center" gutterBottom>
-          Welcome!!!
+        <Typography variant="h3" align="center" gutterBottom style={{marginTop:'20px'}}>
+          Welcome To Book Store!!!
         </Typography>
-        <Typography variant="body1" align="center" paragraph>
+        <Typography variant="p" align="center" paragraph style={{marginTop:'20px'}}>
           Explore a wide range of books in various genres
         </Typography>
         <Grid container justifyContent="center">
@@ -90,6 +90,7 @@ function Home() {
             variant="contained"
             color="primary"
             size="large"
+            style={{borderRadius:'25px'}}
           >
             Explore Store
           </Button>
@@ -98,16 +99,16 @@ function Home() {
 
       {/* Featured Books */}
       <Container>
-        <Typography variant="h3" align="center" gutterBottom>
+        <Typography variant="h4" align="center" gutterBottom style={{marginTop:'20px'}}>
           Featured Books
         </Typography>
         <br></br>
         <Grid container spacing={2}>
         <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} marginBottom={'30px'}>
           {books.map((book, index) => (
             <Grid item key={index} xs={12} sm={6} md={4}>
-              <Card>
+              <Card style={{borderRadius:'25px'}}>
                 <CardMedia
                   component="img"
                   height="250"

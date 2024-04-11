@@ -151,7 +151,7 @@ export default function Checkout() {
   };
 
   return (
-    <Grid container marginTop={10}>
+    <Grid container marginTop={10} style={{padding:'0.5% 20% 5% 20%'}}>
       <Grid item xs={12} sm={5} lg={4}>
         <Box
           sx={{
@@ -212,6 +212,7 @@ export default function Checkout() {
                   variant="contained"
                   endIcon={<ChevronRightRoundedIcon />}
                   onClick={handleNext}
+                  style={{borderRadius:'25px', padding:'15px 25px'}}
                 >
                   {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                 </Button>

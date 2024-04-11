@@ -42,7 +42,7 @@ const OrderDetails = ({customer_id}) => {
 
   return (
     <Grid container spacing={2} marginTop={5}>
-      {orders.map(order => (
+      {orders && orders.map(order => (
         <Grid item xs={12} key={order.order_id}>
           <Card>
             <CardContent>

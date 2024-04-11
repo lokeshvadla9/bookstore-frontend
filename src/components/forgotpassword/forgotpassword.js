@@ -94,7 +94,7 @@ const ForgotPassword = () => {
               />
             </Grid>
             <Grid item xs={12}>
-              <Button type="submit" variant="contained" color="primary" fullWidth>
+              <Button type="submit" variant="contained" color="primary" style={{borderRadius:'25px', padding:'10px 0'}} fullWidth>
                 Submit
               </Button>
             </Grid>

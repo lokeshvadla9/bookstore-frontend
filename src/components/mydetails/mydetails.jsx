@@ -143,18 +143,27 @@ function MyDetails({ userData }) {
                 fullWidth
               />
             </Grid>
-          </Grid>
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem',width:'50%', marginLeft:'25%' }}>
-  <Button type="submit" variant="contained" color="primary" sx={{ width: '40%', marginRight: '1rem' }}>
+            <Grid item xs={12} sm={6}>
+            <Button type="submit" variant="contained" color="primary" sx={{ marginRight: '1rem', borderRadius:'25px', padding:'10px 20px' }}>
     Update Details
   </Button>
-  <Button variant="contained" onClick={handleCancelClick} style={{ color: 'inherit', width: '40%' }}>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+            <Button variant="outlined" onClick={handleCancelClick} style={{ color: 'inherit', borderRadius:'25px', padding:'10px 20px' }}>
     Cancel
   </Button>
-</div>
+            </Grid>
+          </Grid>
+          
         </form>
       ) : (
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2, mb: 2 }}>
+        <div>
+          <div>
+<IconButton onClick={handleEditClick} sx={{ gridColumn: 'span 2', mt: 2, justifyContent: 'flex-end', textAlign:'left' }}>
+                <EditIcon /> Edit 
+            </IconButton>
+            </div>
+        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2, mb: 2, textAlign:'left', marginLeft:'300px', marginTop:'30px' }}>
             <Typography variant="body1" sx={{ fontWeight: 'bold'}}>
                 First Name:
             </Typography>
@@ -175,10 +184,8 @@ function MyDetails({ userData }) {
                 Email:
             </Typography>
             <Typography variant="body1">{email}</Typography>
-            <IconButton onClick={handleEditClick} sx={{ gridColumn: 'span 2', mt: 2, justifyContent: 'flex-end' }}>
-                <EditIcon />
-            </IconButton>
 </Box>
+</div>
 
       )}
     </Box>
