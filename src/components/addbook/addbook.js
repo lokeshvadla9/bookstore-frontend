@@ -340,7 +340,7 @@ const handleImageChange = (e) => {
               style={{ display: 'none' }}
             />
             <label htmlFor="contained-button-file">
-              <Button variant="contained" component="span">
+              <Button variant="outlined" component="span" style={{borderRadius:'25px', padding:'15px 70px'}}>
                 Choose Image
               </Button>
             </label>
@@ -351,6 +351,7 @@ const handleImageChange = (e) => {
               variant="contained"
               color="primary"
               fullWidth
+              style={{borderRadius:'25px', padding:'15px 25px'}}
             >
               Add Book
             </Button>
