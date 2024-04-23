@@ -47,7 +47,7 @@ const OrderDetails = ({customer_id}) => {
           <Card>
             <CardContent>
               <Typography variant="h6">Order ID: {order.order_id}</Typography>
-              <Typography variant="subtitle1">Payment Type: {order.payment_type}</Typography>
+              <Typography variant="subtitle1">Payment Type: {order.payment_method}</Typography>
               <Typography variant="body1">Delivery Address: {order.delivery_address}</Typography>
               <Typography variant="body1">Total Price: ${order.total_price}</Typography>
               <Typography variant="body1">Order Date: {formatDate(order.order_date)}</Typography>
