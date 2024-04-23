@@ -145,7 +145,8 @@ const handleImageChange = (e) => {
               quantity_available:bookData['quantity'],
               publiction_year:bookData['publicationYear'],
               ISBN:bookData['isbn'],
-              image_url:imageUrl
+              image_url:imageUrl,
+              is_deleted:0
               
               
             })
@@ -188,7 +189,7 @@ const handleImageChange = (e) => {
               Swal.fire({
                   icon: 'error',
                   title: 'Registration Failed',
-                  text: 'Failed to register user',
+                  text: 'Failed to register book',
                 });
           }
       } catch (error) {

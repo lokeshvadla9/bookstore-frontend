@@ -28,19 +28,14 @@ const OrdersPage = () => {
 
   const handleStatusChange = async (order, newStatus) => {
     try {
-      const response = await fetch(config.backendBaseUrl+'/api/book/createorupdateorder', {
+      const response = await fetch(config.backendBaseUrl+'/api/book/updateorderstatus', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ 
-          order_id:order['Order Id'],
-          customer_id:null,
-          delivery_address:null,
-          total_price:null,
+          order_id:order['Order ID'],
           order_status:newStatus,
-          payment_method:null,
-          is_deleted:0
          })
       });
       const data = await response.json();
@@ -75,9 +70,9 @@ const OrdersPage = () => {
           </TableHead>
           <TableBody>
             {orders.map((order) => (
-              <TableRow key={order['Order Id']}>
+              <TableRow key={order['Order ID']}>
                 <TableCell component="th" scope="row">
-                  {order['Order Id']}
+                  {order['Order ID']}
                 </TableCell>
                 <TableCell align="right">{order['Customer Name']}</TableCell>
                 <TableCell align="right">{order['Order Date']}</TableCell>
