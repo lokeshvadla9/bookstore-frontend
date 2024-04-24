@@ -104,14 +104,18 @@ const FormGrid = styled('div')(() => ({
     if (!regex.test(dateString)) {
       return false;
     }
-    const [, month, year] = dateString.split('/');
+    console.log(dateString);
+    const [month, year] = dateString.split('/');
+    console.log(month,year,dateString);
     const monthNumber = parseInt(month, 10);
     const yearNumber = parseInt(year, 10);
+    console.log(monthNumber, yearNumber);
     if (monthNumber < 1 || monthNumber > 12) {
       return false;
     }
     const currentYear = new Date().getFullYear() % 100;
-    if (yearNumber <= currentYear || yearNumber >= 99) {
+    console.log(currentYear)
+    if (yearNumber < currentYear || yearNumber > 99) {
       return false;
     }
     return true;
@@ -141,11 +145,14 @@ const FormGrid = styled('div')(() => ({
 
   const handleExpirationDateChange = (event) => {
     const value = event.target.value.replace(/\D/g, '');
+    console.log(value);
     const formattedValue = value.replace(/(\d{2})(?=\d{2})/, '$1/');
+    console.log(formattedValue);
     if (value.length <= 4) {
       setExpirationDate(formattedValue);
+    }else{
+      setErrors({ ...errors, [event.target.name]: '' });
     }
-    setErrors({ ...errors, [event.target.name]: '' });
   };
 
   return (

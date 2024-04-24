@@ -125,18 +125,18 @@ const Inventory = ({ onAddBookClick }) => {
   }
 
   return (
-    <Box sx={{ padding: '20px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)', borderRadius: '5px', marginTop:'3%' }}>
+    <Box sx={{ padding: '20px', marginTop:'3%' }}>
       <Typography variant="h4" gutterBottom>Inventory</Typography>
-        <Button variant="contained" onClick={handleAddBookClick} style={{ float: 'right', borderRadius:'25px', padding:'10px 20px'}}>Add Book</Button>
+        <Button variant="contained" onClick={handleAddBookClick} style={{ float: 'right', padding:'10px 20px', borderRadius:'25px'}}>Add Book</Button>
     <Grid container spacing={2}>
       {books && books.map((book) => (
         <Grid item key={book.book_id}>
-          <Card style={{ maxWidth: 305, margin: 10, borderRadius:'25px'}}>
-            <CardContent style={{ height: 505, overflow: 'hidden' }}>
+          <Card style={{ maxWidth: 305, margin: 10, boxShadow:'none', border:'none', backgroundColor:'inherit'}}>
+            <CardContent style={{ height: 605, overflow: 'hidden' }}>
               <Typography variant="h6" gutterBottom>
                 {book.title}
               </Typography>
-              <img src={book.image_url} alt={book.title} style={{ width: '50%', height: '50%', marginTop: 10, borderRadius:'5%' }} />
+              <img src={book.image_url} alt={book.title} style={{ width: '100%', height: '60%', marginTop: 10, borderRadius:'5%' }} />
               <Typography variant="body1" color="textSecondary" style={{marginTop:'5px'}} >
                 Author: {book.author}
               </Typography>

@@ -127,7 +127,7 @@ function CustomerHome() {
       <Box sx={{ display: 'flex'}}>
         <CssBaseline />
         
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} style={{backgroundColor:'#fff'}}>
           <Toolbar
             sx={{
               display: 'flex',

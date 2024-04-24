@@ -20,11 +20,11 @@ function Cart({ cart,userData,setCart}) {
   };
 
   return (
-<Box sx={{ padding: '20px', boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)', borderRadius: '5px', marginTop:'3%' }}>
+<Box sx={{ padding: '20px', marginTop:'3%' }}>
       <Typography variant="h4" gutterBottom>Cart</Typography>
       {cart.length === 0 ? (
-        <Box sx={{ textAlign: 'center', py: 4 }}>
-        <ShoppingCartIcon fontSize="large" color="disabled" sx={{ fontSize: 80 }} />
+        <Box sx={{ textAlign: 'center', py: 4 ,marginTop:'140px'}}>
+        <ShoppingCartIcon fontSize='large' color="disabled" sx={{ fontSize: 140 }} />
         <Typography variant="body1" sx={{ mt: 2 }}>Cart is empty</Typography>
       </Box>
       ) : (

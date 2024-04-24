@@ -15,22 +15,20 @@ import { Loader } from "../loader/Loader";
 
 // Styled component for the card
 const StyledCard = styled(Card)({
-  maxWidth: 450,
+  maxWidth: 300,
   margin: 10,
-  borderRadius: '5%'
 });
 
 // Styled component for the card content
 const StyledCardContent = styled(CardContent)({
-  height: 550,
+  height: 650,
   overflow: "hidden",
 });
 
 // Styled component for the card media
 const StyledCardMedia = styled(CardMedia)({
-  width: "42%",
-  height: "50%",
-  borderRadius: '5%'
+  width: "100%",
+  height: "60%",
 });
 
 function Shop({ onCardClick }) {
@@ -84,9 +82,9 @@ function Shop({ onCardClick }) {
     <Box mt={4}>
       <Grid container spacing={2}>
         {books.map((book) => (
-          <Grid item key={book.book_id} style={{borderRadius: '5%'}}>
+          <Grid item key={book.book_id}>
             <CardActionArea onClick={() => onCardClick(book)}>
-              <StyledCard style={{borderRadius: '5%'}} >
+              <StyledCard style={{ backgroundColor:'inherit', boxShadow:'none'}} >
                 <StyledCardContent>
                 <StyledCardMedia
                     component="img"
@@ -107,13 +105,13 @@ function Shop({ onCardClick }) {
                   </Typography>
                   <Typography variant="body2" component="p">
                     {book.description.substring(0, 100)}
-                    {book.description.length > 100 && "..."}
+                    {book.description.length > 50 && "..."}
                   </Typography>
-                  {/* <Tooltip title={book.description} arrow>
+                   <Tooltip title={book.description} arrow>
                   <Typography variant="body2" component="p" color="primary" style={{ cursor: 'pointer' }}>
                     See more
                   </Typography>
-                </Tooltip> */}
+                </Tooltip> 
                 </StyledCardContent>
               </StyledCard>
             </CardActionArea>

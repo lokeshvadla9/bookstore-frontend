@@ -16,19 +16,21 @@ const BookDetail = ({ book, onAddToCart }) => {
         onAddToCart(book,quantity);
       };  
   return (
-    <Card style={{ display: 'flex', margin: '25px', minWidth: '800px', borderRadius: '20px' }}>
+    <Card style={{ display: 'flex', margin: '100px 225px', minWidth: '800px', border:'none', boxShadow:'none', backgroundColor:'inherit'}}>
       <CardMedia
         component="img"
-        style={{ width: '200px', height: '300px' }}
+        style={{ width: '300px', height: '400px' }}
         image={book.image_url}
         title={book.title}
       />
       <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '16px' }}>
-        <CardContent style={{height:'300px'}}>
-          <Typography variant="h5">{book.title}</Typography>
-          <Typography variant="subtitle1">{book.author}</Typography>
-          <Typography variant="body2" color="textSecondary">{book.description}</Typography>
-          <Grid container spacing={2} alignItems="center" style={{marginTop:'95px', display:'block'}}>
+        <CardContent style={{height:'600px', border:'none'}}>
+          <Typography variant="h5" style={{fontSize:50, lineClamp:1, textOverflow:'ellipsis', display:'-webkit-box', WebkitLineClamp: 2,WebkitBoxOrient:'vertical', overflow:'hidden'}}>{book.title}</Typography>
+          <Typography variant="h6" style={{fontSize:30}}>{book.author}</Typography>
+          <Typography variant="subtitle2" style={{fontSize:20}}>ISBN: {book.ISBN}</Typography>
+          <Typography variant="subtitle2" style={{fontStyle:'italic', fontSize:20}}>Price: ${book.price}</Typography>
+          <Typography variant="body" style={{textOverflow:'ellipsis', marginTop:'30px',display:'-webkit-box', WebkitLineClamp: 8,WebkitBoxOrient:'vertical', overflow:'hidden'}} color="textSecondary">{book.description}</Typography>
+          <Grid container spacing={2} alignItems="center" style={{marginTop:'50px', display:'block'}}>
     
             
             <FormControl style={{ minWidth: '120px', float:'right'}}>
